@@ -1,10 +1,29 @@
 ﻿@page "/"
 @using EventEase.Components
+@using EventEase.Models
+@inject EventService ES
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-<EventCard EventName = "Cricket World Cup 2025"
-    EventDate = "01/12/2025" EventDescription = "8 teams, 1 Champion!"
-    EventImage = "https://tse1.mm.bing.net/th/id/OIP.RvpXFtpgkyQhqAETu5rD5wHaEY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"/>
+@foreach(Event e in events)
+{
+
+    <EventCard EventName = "@e.Name"
+    EventDate = "@e.Date" EventDescription = "@e.Description"
+    EventImage = "@e.Image"/>
+
+}
+
+<NavLink class="btn btn-primary" href="/add-event">Add Event</NavLink>
+
+@code
+{
+    private List<Event> events = new List<Event>();
+
+    protected override void OnInitialized()
+    {
+        events = ES.get();
+    }
+}

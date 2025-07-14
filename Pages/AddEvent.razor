@@ -1,0 +1,38 @@
+@page "/add-event"
+@using EventEase.Models
+@inject NavigationManager NM
+@inject EventService ES
+
+<EditForm Model = "e" OnSubmit = "addIt">
+
+    <label for="name">Event Name:</label>
+    <InputText @bind-Value = "@e.Name" id="name" />
+
+    <label for="description">Description:</label>
+    <InputText @bind-Value = "@e.Description" id="description" />
+
+    <label for="date">Date:</label>
+    <InputText @bind-Value = "@e.Date" id="date" />
+
+    <label for="image">Image URL:</label>
+    <InputText @bind-Value = "@e.Image" id="image" />
+
+    <button type = "submit">Add Event</button>
+</EditForm>
+
+@code
+{
+    private List<Event> events = new List<Event>();
+    private Event e = new Event();
+
+    protected override void OnInitialized()
+    {
+        events = ES.get();
+    }
+
+    private void addIt()
+    {
+        ES.add(e);
+        NM.NavigateTo("/");
+    }
+}
