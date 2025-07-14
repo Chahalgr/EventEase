@@ -1,0 +1,22 @@
+<div class = "card">
+    <img class="card-image" src="@EventImage" alt="Event Banner" />
+    <h2>@EventName</h2>
+    <h4 class = "card-date">Date: @EventDate</h4>
+    <p>Details: @EventDescription</p>
+</div>
+
+@code
+{
+    [Parameter]
+    public string EventName { get; set; } = "";
+
+    [Parameter]
+    public string EventDate { get; set; } = "";
+
+    [Parameter]
+    public string EventDescription { get; set; } = "";
+
+    [Parameter]
+    public string EventImage { get; set; } = "https://via.placeholder.com/150";
+
+}
