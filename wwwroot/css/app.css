@@ -1,6 +1,9 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f9f9fc;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 h1:focus {
