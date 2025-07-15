@@ -1,0 +1,49 @@
+body[b-1c44qcgn4m] {
+    background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+    background-color: #f9f9f9;
+}
+
+
+h2[b-1c44qcgn4m] {
+    font-size: 5.5rem;
+    color: #2c3e50;
+    padding-top: 35px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-title[b-1c44qcgn4m] {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.event-container[b-1c44qcgn4m] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 equal columns */
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+}
+
+.add-button-container[b-1c44qcgn4m] {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.btn-primary[b-1c44qcgn4m] {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover[b-1c44qcgn4m] {
+    background-color: #0056b3;
+}

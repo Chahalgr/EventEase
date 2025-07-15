@@ -1,0 +1,84 @@
+h1[b-wtkyvp6q6w] {
+    font-size: 5.5rem;
+    color: #2c3e50;
+    padding-top: 35px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+.details-card[b-wtkyvp6q6w] {
+    max-width: 700px;
+    margin: 4rem auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-card:hover[b-wtkyvp6q6w] {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image[b-wtkyvp6q6w] {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.details-card h2[b-wtkyvp6q6w] {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.details-card h4[b-wtkyvp6q6w] {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.25rem;
+}
+
+.details-card p[b-wtkyvp6q6w] {
+    font-size: 1rem;
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.details-card p strong[b-wtkyvp6q6w] {
+    color: #2980b9;
+    font-weight: 600;
+}
+
+
+.badge[b-wtkyvp6q6w] {
+    background-color: #3498db;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.btn-primary[b-wtkyvp6q6w] {
+    background-color: #007bff;
+    border: none;   
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: block;
+    margin: 1.5rem auto 1.5rem auto;
+}
+
+.btn-primary:hover[b-wtkyvp6q6w] {
+    background-color: #0056b3;
+}
