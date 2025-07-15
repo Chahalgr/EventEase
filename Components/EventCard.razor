@@ -1,8 +1,8 @@
-<div class = "card">
+@inject NavigationManager NavigationManager
+<div class = "card clickable-card" @onclick = "GoToDetails">
     <img class="card-image" src="@EventImage" alt="Event Banner" />
     <h2>@EventName</h2>
     <h4 class = "card-date">Date: @EventDate</h4>
-    <p>Details: @EventDescription</p>
 </div>
 
 @code
@@ -18,5 +18,13 @@
 
     [Parameter]
     public string EventImage { get; set; } = "https://via.placeholder.com/150";
+
+    [Parameter]
+    public int EventId { get; set; } = -1;
+
+    private void GoToDetails()
+    {
+        NavigationManager.NavigateTo($"/details/{EventId}");
+    }
 
 }

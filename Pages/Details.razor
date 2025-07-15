@@ -1,0 +1,38 @@
+@page "/details/{eventId:int}"
+@inject EventService ES
+@inject NavigationManager NM
+@using EventEase.Models
+
+<h1>Event Details</h1>
+
+@if (eventData != null)
+{
+    <div class="card details-card">
+        <img src="@eventData.Image" alt="Event Image" class="card-image" />
+        <h2>@eventData.Name</h2>
+        <h4>Date: @eventData.Date</h4>
+        <p>@eventData.Description</p>
+    </div>
+
+    <button class="btn btn-primary" @onclick="NavigateToRegister">Go to Register</button>
+}
+else
+{
+    <p>No Description</p>
+}
+
+@code {
+    [Parameter] public int eventId { get; set; }
+
+    private Event? eventData;
+
+    protected override void OnInitialized()
+    {
+        eventData = ES.get().FirstOrDefault(e => e.Id == eventId);
+    }
+
+    private void NavigateToRegister()
+    {
+        NM.NavigateTo("/register");
+    }
+}

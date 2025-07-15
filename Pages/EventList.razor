@@ -1,0 +1,44 @@
+@* @page "/list"
+@inject NavigationManager NM
+<h1>Event List</h1>
+
+<button class="btn btn-primary" @onclick="NavigateToDetails">Go to Details</button>
+
+@code 
+{
+    private void NavigateToDetails()
+    {
+        NM.NavigateTo("/details/1");
+    }
+} *@
+@page "/"
+@using EventEase.Components
+@using EventEase.Models
+@inject EventService ES
+
+<PageTitle>Events</PageTitle>
+<h2>Events</h2>
+
+<div class="event-container">
+    @foreach(Event e in events)
+    {
+        <EventCard EventName = "@e.Name"
+        EventDate = "@e.Date" EventDescription = "@e.Description"
+        EventImage = "@e.Image" EventId = "@e.Id"/>
+    }
+</div>
+
+<div class="add-button-container">
+    <NavLink class="btn btn-primary" href="/add-event">Add Event</NavLink>
+</div>
+
+@code
+{
+    private List<Event> events = new List<Event>();
+
+    protected override void OnInitialized()
+    {
+        events = ES.get();
+    }
+}
+

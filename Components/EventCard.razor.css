@@ -52,5 +52,14 @@
     margin-bottom: 16px;
 }
 
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clickable-card:hover {
+    transform: scale(1.02);
+}
+
 
 
