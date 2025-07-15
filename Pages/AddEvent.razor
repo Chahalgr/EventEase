@@ -2,23 +2,33 @@
 @using EventEase.Models
 @inject NavigationManager NM
 @inject EventService ES
+<div class="add-event-form">
+    <h2>Add New Event</h2>
 
-<EditForm Model = "e" OnSubmit = "addIt">
+    <EditForm Model="e" OnSubmit="addIt">
+        <div class="form-group">
+            <label for="name">Event Name:</label>
+            <InputText @bind-Value="@e.Name" id="name" />
+        </div>
 
-    <label for="name">Event Name:</label>
-    <InputText @bind-Value = "@e.Name" id="name" />
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <InputTextArea @bind-Value="@e.Description" id="description" class="description-textarea" />
+        </div>
 
-    <label for="description">Description:</label>
-    <InputText @bind-Value = "@e.Description" id="description" />
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <InputText @bind-Value="@e.Date" id="date" />
+        </div>
 
-    <label for="date">Date:</label>
-    <InputText @bind-Value = "@e.Date" id="date" />
+        <div class="form-group">
+            <label for="image">Image URL:</label>
+            <InputText @bind-Value="@e.Image" id="image" />
+        </div>
 
-    <label for="image">Image URL:</label>
-    <InputText @bind-Value = "@e.Image" id="image" />
-
-    <button type = "submit">Add Event</button>
-</EditForm>
+        <button type="submit">Add Event</button>
+    </EditForm>
+</div>
 
 @code
 {
