@@ -7,12 +7,15 @@
 
 @if (eventData != null)
 {
-    <div class="card details-card">
+    <div class="details-card">
         <img src="@eventData.Image" alt="Event Image" class="card-image" />
-        <h2>@eventData.Name</h2>
-        <h4>Date: @eventData.Date</h4>
-        <p>@eventData.Description</p>
-        <p><strong>Registrations:</strong> @eventData.RegistrationCount</p>
+        @* <div class="card-body"> *@
+            <h2>@eventData.Name</h2>
+            <h4>Date: @eventData.Date</h4>
+            <p>@eventData.Description</p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 1.5rem 0;" />
+            <p><strong>Registrations:</strong> <span class="badge">@eventData.RegistrationCount</span></p>
+        @* </div> *@
     </div>
 
     <button class="btn btn-primary" @onclick="NavigateToRegister">Go to Register</button>

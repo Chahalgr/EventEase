@@ -5,15 +5,24 @@
 
 <h1>Register for Event</h1>
 
-<EditForm Model="reg" OnSubmit="RegisterForEvent">
-    <label for="name">Name:</label>
-    <InputText @bind-Value="@reg.Name" id="name" />
+<div class="register-form">
+    <h2>Register for Event</h2>
 
-    <label for="email">Email:</label>
-    <InputText @bind-Value="@reg.Email" id="email" />
+    <EditForm Model="reg" OnSubmit="RegisterForEvent">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <InputText @bind-Value="@reg.Name" id="name" />
+        </div>
 
-    <button type="submit">Register</button>
-</EditForm>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <InputText @bind-Value="@reg.Email" id="email" />
+        </div>
+
+        <button type="submit">Register</button>
+    </EditForm>
+</div>
+
 
 @code {
     [Parameter] public int eventId { get; set; }
