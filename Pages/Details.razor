@@ -12,6 +12,7 @@
         <h2>@eventData.Name</h2>
         <h4>Date: @eventData.Date</h4>
         <p>@eventData.Description</p>
+        <p><strong>Registrations:</strong> @eventData.RegistrationCount</p>
     </div>
 
     <button class="btn btn-primary" @onclick="NavigateToRegister">Go to Register</button>
@@ -33,6 +34,6 @@ else
 
     private void NavigateToRegister()
     {
-        NM.NavigateTo("/register");
+        NM.NavigateTo($"/register/{eventId}");
     }
 }

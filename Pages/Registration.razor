@@ -1,0 +1,34 @@
+@page "/register/{eventId:int}"
+@using EventEase.Models
+@inject NavigationManager NM
+@inject EventService ES
+
+<h1>Register for Event</h1>
+
+<EditForm Model="reg" OnSubmit="RegisterForEvent">
+    <label for="name">Name:</label>
+    <InputText @bind-Value="@reg.Name" id="name" />
+
+    <label for="email">Email:</label>
+    <InputText @bind-Value="@reg.Email" id="email" />
+
+    <button type="submit">Register</button>
+</EditForm>
+
+@code {
+    [Parameter] public int eventId { get; set; }
+
+    private Reg reg = new Reg();
+
+    private void RegisterForEvent()
+    {
+        ES.register(eventId);
+        NM.NavigateTo($"/details/{eventId}");
+    }
+
+    public class Reg
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+    }
+}

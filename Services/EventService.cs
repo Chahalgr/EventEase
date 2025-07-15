@@ -7,7 +7,6 @@ public class EventService
 
     public void add(string name, string description, string date, string img)
     {
-        Console.WriteLine("Arguments");
         if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(date) ||
             !DateTime.TryParseExact(date, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out _) 
             || string.IsNullOrWhiteSpace(description))
@@ -25,15 +24,6 @@ public class EventService
 
     public void add(Event e)
     {
-        Console.WriteLine("Event e");
-        // if (e == null || string.IsNullOrWhiteSpace(e.Name) || string.IsNullOrWhiteSpace(e.Date) 
-        //     || !DateTime.TryParseExact(e.Date, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out _)
-        //     || string.IsNullOrWhiteSpace(e.Description))
-        // {
-        //     Console.WriteLine("Invalid event data, cannot add event.");
-        //     return;
-        // }
-
         if (e == null)
         {
             Console.WriteLine("Event is null, cannot add event.");
@@ -76,12 +66,20 @@ public class EventService
             e.Id = Events.Count + 1;
         }
         Events.Add(e);
-        Console.WriteLine("Event added successfully.");
     }
 
     public List<Event> get()
     {
         return Events;
+    }
+
+    public void register(int id)
+    {
+        Event e = Events.FirstOrDefault(e => e.Id == id);
+        if(e != null)
+        {
+            ++e.RegistrationCount;
+        }
     }
 
 }

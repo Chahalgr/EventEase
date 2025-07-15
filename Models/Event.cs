@@ -8,6 +8,7 @@ namespace EventEase.Models
         public string Date { get; set; } = string.Empty;
         public string Image { get; set; } = string.Empty;
 
+        public int RegistrationCount { get; set; } = 0;
 
         public Event() {}
 
@@ -21,6 +22,7 @@ namespace EventEase.Models
             Description = description;
             Date = date;
             Image = img;
+            RegistrationCount = 0;
         }
     }
 }
