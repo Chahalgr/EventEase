@@ -59,3 +59,20 @@
 .add-event-form button:hover {
     background-color: #0056b3;
 }
+
+@media (max-width: 600px) {
+    .form-group {
+      grid-template-columns: 1fr;
+      text-align: left;
+    }
+  
+    .form-group label {
+      text-align: left;
+    }
+  
+    .add-event-form {
+      margin: 1.5rem 1rem; /* add side padding for small screens */
+      padding: 1.5rem;
+    }
+  }
+  

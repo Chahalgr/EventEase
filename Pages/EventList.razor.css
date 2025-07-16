@@ -47,3 +47,41 @@ h2 {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+@media (max-width: 900px) {
+    .event-container {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .event-container {
+        grid-template-columns: 1fr; /* Switch to single column */
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        padding-top: 25px;
+    }
+
+    .page-title {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}
+
