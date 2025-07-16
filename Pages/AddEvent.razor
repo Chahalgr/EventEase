@@ -8,22 +8,22 @@
     <EditForm Model="e" OnSubmit="addIt">
         <div class="form-group">
             <label for="name">Event Name:</label>
-            <InputText @bind-Value="@e.Name" id="name" />
+            <InputText @bind-Value="@e.Name" id="name" placeholder = "Enter your name"/>
         </div>
 
         <div class="form-group">
             <label for="description">Description:</label>
-            <InputTextArea @bind-Value="@e.Description" id="description" class="description-textarea" />
+            <InputTextArea @bind-Value="@e.Description" id="description" class="description-textarea" placeholder = "Enter Description" />
         </div>
 
         <div class="form-group">
             <label for="date">Date:</label>
-            <InputText @bind-Value="@e.Date" id="date" />
+            <InputText @bind-Value="@e.Date" id="date" placeholder = "mm/dd/yyyy" />
         </div>
 
         <div class="form-group">
             <label for="image">Image URL:</label>
-            <InputText @bind-Value="@e.Image" id="image" />
+            <InputText @bind-Value="@e.Image" id="image" placeholder = "Enter URL or leave blank" />
         </div>
 
         <button type="submit">Add Event</button>
